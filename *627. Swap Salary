@@ -26,7 +26,7 @@ After running your query, the above salary table should have the following rows:
 
 
 
-
+Solution 1: 
 UPDATE salary 
 SET sex = CASE sex
 WHEN 'f' THEN 'm'
@@ -37,3 +37,7 @@ END;
 #The CASE statement is SQL’s way of handling if/then logic. 
 #The CASE statement is followed by at least one pair of WHEN and THEN statements—SQL’s equivalent of IF/THEN in Excel. 
 #Every CASE statement must end with the END statement. The ELSE statement is optional, and provides a way to capture values not specified in the WHEN/THEN statements.
+
+Solution 2:
+UPDATE salary 
+SET sex = IF(sex='f','m','f');
