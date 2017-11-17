@@ -16,6 +16,13 @@ For example, given the above Employee table, the query should return 200 as the 
 | 200                 |
 +---------------------+
 -------------------------------------------------------------------------------------------------------------------
+Solution1: 
 SELECT 
 (SELECT distinct Salary FROM Employee ORDER BY Salary Desc
 LIMIT 1 OFFSET 1) as SecondHighestSalary;
+
+
+Solution2:
+SELECT MAX(Salary) FROM Employee 
+WHERE Salary NOT IN
+(SELECT MAX(Salary) FROM Employee);
