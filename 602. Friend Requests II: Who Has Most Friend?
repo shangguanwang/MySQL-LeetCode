@@ -21,8 +21,10 @@ In the real world, multiple people could have the same most number of friends, c
 ######################################################################
 SELECT ids as id, COUNT(*) as num 
 FROM (SELECT requester_id as ids FROM request_accepted 
-      UNION ALL 
+      UNION ALL                                                 #will keep duplicate rows, unlike UNION
       SELECT accepter_id as ids FROM request_accepted) AS u
 GROUP BY ids
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
+
