@@ -26,3 +26,8 @@ Solution2:
 SELECT MAX(Salary) FROM Employee 
 WHERE Salary NOT IN
 (SELECT MAX(Salary) FROM Employee);
+
+-------------------------------------------------------------------------------------------------------------------
+Function Tested:
+You could use the LIMIT clause to limit the number of rows displayed
+OFFSET x, skip the first x rows
